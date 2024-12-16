@@ -23,13 +23,14 @@ public class DynamicMethodDispatch {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		TV tt = new TV();
-		tt.switchOn();
-		TV tt2=new smartTV();
-		tt2.switchOn();
+		TV tt = new TV();		
+		tt.switchOn();				
+		TV tt2=new smartTV();		//Making object of subclass(SmartTV) with reference of parent class (TV)
+		tt2.switchOn();				//Overidden Method of subclass is called
 		smartTV tt3=new smartTV();
 		tt3.switchOn();
  		tt3.browse();
+ //		tt2.browse();				Method that are not present in the referennced class (parent) cannot be called 
 	}
 
 }
