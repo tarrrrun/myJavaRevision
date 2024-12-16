@@ -39,8 +39,67 @@ class myHospital extends Hospital{
 	}
 }
 
+// <------------------------------------	Another Example below	-------------------------------------->
 
+ abstract class Shape{
+	 abstract double area();
+	 abstract double perimeter();
+ }
+class Rectanglee extends Shape{
+	private double length,breadth;
+	
+	public double getLength() {
+		return length;
+	}
 
+	public void setLength(double length) {
+		this.length = length;
+	}
+
+	public double getBreadth() {
+		return breadth;
+	}
+
+	public void setBreadth(double breadth) {
+		this.breadth = breadth;
+	}
+	Rectanglee(){
+		this.length=1;
+		this.breadth=1;
+	}
+	Rectanglee(double x,double y){
+		this.length=x;
+		this.breadth=y;
+	}
+	public double area() {
+		return length*breadth;
+	}
+	public double perimeter() {
+		return 2*(length+breadth);
+	}
+}
+class Circleee extends Shape{
+	private double radius;
+	Circleee(){
+		this.radius=1;
+	}
+	Circleee(double radius){
+		this.radius=radius;
+	}
+	public double getRadius() {
+		return radius;
+	}
+	public void setRadius(double radius) {
+		this.radius = radius;
+	}
+	public double area() {
+		return Math.PI*radius*radius;
+		
+	}
+	public double perimeter() {
+		return Math.PI*radius*2;
+	}
+}
 
 public class AbstractclassesInJava {
 
@@ -61,8 +120,20 @@ public class AbstractclassesInJava {
 		hh.appointment();
 		hh.admit();
 		hh.billing();
-		
-		
+		System.out.println("<------------------------------>");
+		System.out.println("Printing Shape example below");
+		Shape rec=new Rectanglee(20,10);
+//		rec.getLength();			wont execute because of Shape class reference
+		rec.area();
+		rec.perimeter();
+		Rectanglee recc=new Rectanglee(20,10);
+		recc.getLength();
+		recc.getBreadth();
+		recc.area();
+		recc.perimeter();
+		Circleee cir=new Circleee(5);
+		cir.area();
+		cir.perimeter();
 		
 	}
 
