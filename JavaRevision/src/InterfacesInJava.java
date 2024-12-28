@@ -1,3 +1,8 @@
+
+
+//		INTERFACES are used for defining callback methods in java
+
+
 interface IMusicPlayer{  // Standard notation for interfaces 
 	public void play();
 	public void stop();
