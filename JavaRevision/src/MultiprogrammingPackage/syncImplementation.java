@@ -43,9 +43,6 @@ public class syncImplementation {
 		mt1.start();
 		mt2.start();
 		
-		
-		
-
 	}
 
 }

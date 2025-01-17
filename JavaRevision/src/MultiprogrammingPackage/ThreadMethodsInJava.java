@@ -8,7 +8,7 @@ class MyThreaddd extends Thread
 	}
 	public void run() {
 		int i=1;
-		while(i<10) {
+		while(true) {
 			System.out.println("This thread: "+i++);
 			try{Thread.sleep(200);}catch(Exception e) {System.out.println(e);}
 		}
@@ -27,7 +27,7 @@ class MyThreadd extends Thread{
         while (true) {
             System.out.println(i + " !!!!");
             try {
-            	Thread.sleep(600);
+            	Thread.sleep(50);
             }catch(InterruptedException e){
             	System.out.println(e.toString());
             }
@@ -43,32 +43,41 @@ public class ThreadMethodsInJava {
 			System.out.println("NameL: "+mth.getName());
 			System.out.println("priority: "+mth.getPriority());
 			System.out.println("State: "+mth.getState());
+			
 			mth.setPriority(Thread.MAX_PRIORITY-2);
+			mth.setDaemon(true);
 			mth.start();
 			System.out.println("Alive: "+mth.isAlive());
-			mth.interrupt();
-			MyThreadd t=new MyThreadd("My Thread 1");
-			t.setPriority(Thread.NORM_PRIORITY+2);
-			//System.out.println(t.getId());		This method is deprecated.
-			System.out.println("NAME "+t.getName());
-			System.out.println("PRIORITY "+t.getPriority());
-			System.out.println("STATE "+t.getState());
-			System.out.println("ALIVE "+t.isAlive());
-//			t.setDaemon(true);
-			t.start();
-			Thread mythread=Thread.currentThread();
+			Thread mainThread=Thread.currentThread();
 			try {
-				mythread.join();
+				mainThread.join();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
-				System.out.println(e.toString());
+				e.printStackTrace();
 			}
-			int i = 1;
-	        while (true) {
-	            System.out.println(i + " main");
-	            i++;
-	            Thread.yield();
-	        }
+//			mth.interrupt();
+//			MyThreadd t=new MyThreadd("My Thread 1");
+//			t.setPriority(Thread.NORM_PRIORITY+2);
+//			//System.out.println(t.getId());		This method is deprecated.
+//			System.out.println("NAME "+t.getName());
+//			System.out.println("PRIORITY "+t.getPriority());
+//			System.out.println("STATE "+t.getState());
+//			System.out.println("ALIVE "+t.isAlive());
+////			t.setDaemon(true);
+//			t.start();
+//			Thread mythread=Thread.currentThread();
+//			try {
+//				mythread.join();
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				System.out.println(e.toString());
+//			}
+//			int i = 1;
+//	        while (true) {
+//	            System.out.println(i + " main");
+//	            i++;
+//	            Thread.yield();
+//	        }
 
 //			mythread.interrupt();
 //			try {MyThreadd.sleep(10000);}catch(Exception e) {}

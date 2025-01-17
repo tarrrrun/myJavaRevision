@@ -36,11 +36,9 @@ public class HelloWorldByThreads extends Thread {
         MyThread tr = new MyThread();
         MyThread2 mtrd=new MyThread2();
         Thread trd = new Thread(mtrd);
-        // Start both threads
         t.start();
         tr.start();
         trd.start();
-        // Main thread logic
         int i = 1;
         while (i < 10) {
             System.out.println(i + " world");
