@@ -5,9 +5,14 @@ class MyData
 
 			for (int i=0;i<str.length();i++)
 			{
-				System.out.println(str.charAt(i));
+				System.out.print(str.charAt(i));
+				try {
+					Thread.sleep(650);
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println(e.toString());
+				}
 			}
-		
 	}
 }
 class MyThread1 extends Thread
@@ -16,9 +21,9 @@ class MyThread1 extends Thread
 	MyThread1(MyData dat){
 		d=dat;
 	}
-	public void run()
+	public void run() 
 	{
-		d.disp("Hello World");
+		d.disp("Hello World ");
 	}
 }
 class MyThreadd2 extends Thread
